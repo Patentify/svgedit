@@ -83,7 +83,7 @@
     ]
   },
   "dependencies": {
-    "@svgedit/svgcanvas": "7.2.2",
+    "@svgedit/svgcanvas": "^7.2.2",
     "browser-fs-access": "0.35.0",
     "core-js": "3.37.0",
     "elix": "15.0.1",
