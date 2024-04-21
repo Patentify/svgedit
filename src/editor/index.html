@@ -43,24 +43,44 @@
   svgEditor.init()
   setTimeout(() => {
     svgEditor.loadFromString(`
-      <svg width="200px" height="200px" xmlns="http://www.w3.org/2000/svg">
-        <!-- Background -->
-        <rect width="100%" height="100%" fill="url(#skyGradient)" />
-        <defs>
-          <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style="stop-color:rgb(255,183,77);stop-opacity:1" />
-            <stop offset="100%" style="stop-color:rgb(255,94,58);stop-opacity:1" />
-          </linearGradient>
-        </defs>
-        <!-- Sun -->
-        <circle cx="100" cy="150" r="30" fill="url(#sunGradient)" />
-        <defs>
-          <radialGradient id="sunGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-            <stop offset="0%" style="stop-color:rgb(255,255,240);stop-opacity:1" />
-            <stop offset="100%" style="stop-color:rgb(255,183,77);stop-opacity:0" />
-          </radialGradient>
-        </defs>
-      </svg>
+    <svg width="800px" height="600px" xmlns="http://www.w3.org/2000/svg">
+  <!-- Boxes -->
+  <rect x="10" y="10" width="150" height="50" fill="white" stroke="black"/>
+  <rect x="10" y="100" width="150" height="50" fill="white" stroke="black"/>
+  <rect x="200" y="100" width="150" height="50" fill="white" stroke="black"/>
+  <rect x="10" y="200" width="150" height="50" fill="white" stroke="black"/>
+  <rect x="200" y="200" width="150" height="50" fill="white" stroke="black"/>
+  <rect x="10" y="300" width="150" height="50" fill="white" stroke="black"/>
+  <rect x="200" y="300" width="150" height="50" fill="white" stroke="black"/>
+  <rect x="10" y="400" width="150" height="50" fill="white" stroke="black"/>
+  
+  <!-- Text -->
+  <text x="25" y="35" font-family="Arial" font-size="12px">Start</text>
+  <text x="25" y="125" font-family="Arial" font-size="12px">Decision 1</text>
+  <text x="215" y="125" font-family="Arial" font-size="12px">Action 1</text>
+  <text x="25" y="225" font-family="Arial" font-size="12px">Decision 2</text>
+  <text x="215" y="225" font-family="Arial" font-size="12px">Action 2</text>
+  <text x="25" y="325" font-family="Arial" font-size="12px">Decision 3</text>
+  <text x="215" y="325" font-family="Arial" font-size="12px">Action 3</text>
+  <text x="25" y="425" font-family="Arial" font-size="12px">End</text>
+  
+  <!-- Arrows -->
+  <line x1="85" y1="60" x2="85" y2="100" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="160" y1="125" x2="200" y2="125" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="85" y1="150" x2="85" y2="200" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="160" y1="225" x2="200" y2="225" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="85" y1="250" x2="85" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="160" y1="325" x2="200" y2="325" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="85" y1="350" x2="85" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Definitions -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000" />
+    </marker>
+  </defs>
+</svg>
+
     `)
   }, 200)
   // Variable XDOMAIN below is created by Rollup for the Xdomain build (see rollup.config.js)
